@@ -121,7 +121,7 @@ void garaj::cumpara_masina(masina* &masina_jucator, pilot& jucator, int& bani){
                     break;
                 }
                 else{
-                    update_masina(masina_jucator, jucator, new masinaF1("Opel Astra G", new motorHibrid(400, 450, "benzina", 100, 100), 0));
+                    update_masina(masina_jucator, jucator, new masinaF1("Opel Astra G", new motorHibrid(400, 450, "benzina", 100, 100), 100));
                     bani-=5000;
                     cout<<"Felicitari! Acum masina ta este una de F1!\n";
                 }

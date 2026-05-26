@@ -107,7 +107,7 @@ void game::citire_adversari(){
         pilot_temporar.genereaza_skill();
         piloti.push_back(pilot_temporar);
 
-        cout<<"Ce tip de masina vrei sa citesti?\n1 - Masina Standard\n2 - Masina Electrica\n3 - Masina Off Road\n4 - Masina F1";
+        cout<<"Ce tip de masina vrei sa citesti?\n1 - Masina Standard\n2 - Masina Electrica\n3 - Masina Off Road\n4 - Masina F1\n";
         int opt;
         cin>>opt;
         if(opt == 1){
@@ -168,6 +168,16 @@ void game :: adversari_impliciti(){
         masina* t = new masinaElectrica();
         t->generare_masina();
         adversari.push_back(t);
+    }
+    int cnt = 1;
+    for(masina* m : adversari){
+        string nume = "Bot" + to_string(cnt);
+        pilot bot;
+        bot.setNume(nume);
+        bot.genereaza_skill();
+        piloti.push_back(bot);
+        m->setPilot(&piloti.back());
+        cnt++;
     }
 }
 
